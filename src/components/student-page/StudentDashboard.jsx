@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import StudentSidebar from "./StudentSidebar";
-import { Zadaci } from "../database/zadaci";
 import TaskContext from "./TaskContext";
-import axios from "axios";
-import { OpenAI } from "openai";
+import { Zadaci } from "../database/zadaci";
 
 const defaultCode = `
 #include<iostream>
@@ -14,34 +12,31 @@ int main()
   return 0;
 }
 `;
-const apiKey = "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";
-//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
+
 const StudentDashboard = () => {
-  const openai = new OpenAI(
-    `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`
-  );
-
-  async function main() {
-    const message = await openai.beta.threads.messages.retrieve(
-      "thread_abc123",
-      "msg_abc123"
-    );
-
-    console.log(message);
-  }
-
+  const [rjesenja, setRjesenja] = useState([
+    { isp: false, set: false },
+    { isp: true, set: false },
+    { isp: false, set: false },
+    { isp: true, set: false },
+    { isp: true, set: false },
+    { isp: false, set: false },
+    { isp: false, set: false },
+    { isp: true, set: false },
+  ]);
+  const [trenutni, setTrenutni] = useState(0);
   const [zadaci, setZadaci] = useState(Zadaci);
   const [kodovi, setKodovi] = useState(
     new Array(zadaci.length).fill(defaultCode)
   );
   const [kod, setKod] = useState(kodovi[0]);
   const [odabrani, setOdabrani] = useState(1);
-  const [ispravniZadaci, setIspravnizadaci] = useState(
+  const [ispravniZadaci, setIspravniZadaci] = useState(
     new Array(zadaci.length).fill(true)
   );
 
   const saveCodeChange = (value) => {
-    let tempKodovi = kodovi;
+    let tempKodovi = kodovi.slice(); // Kopiramo niz kako bismo izbjegli mutiranje stanja
     tempKodovi[odabrani] = value;
     setKodovi(tempKodovi);
     setKod(value);
@@ -50,23 +45,24 @@ const StudentDashboard = () => {
   return (
     <div className="flex">
       <StudentSidebar
+        trenutni={trenutni}
+        setTrenutni={setTrenutni}
         zadaci={zadaci}
         odabrani={odabrani}
         setOdabrani={setOdabrani}
         ispravniZadaci={ispravniZadaci}
+        rjesenja={rjesenja}
       />
       <TaskContext
+        setRjesenja={setRjesenja}
+        trenutni={trenutni}
+        setTrenutni={setTrenutni}
+        rjesenja={rjesenja}
         saveCodeChange={saveCodeChange}
         kodovi={kodovi}
         odabrani={odabrani}
         zadatak={zadaci[odabrani]}
       />
-      <button
-        className="absolute top-1/2 left-1/2 size-11 bg-red-600"
-        onClick={() => main()}
-      >
-        API
-      </button>
     </div>
   );
 };

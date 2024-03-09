@@ -129,32 +129,27 @@ export const Zadaci = [
   },
   {
     zadatakID: "5",
-    imeZadatka: "Trougao",
+    imeZadatka: "Duplikati",
     tekstZadatka:
-      "Traziti od korisnika da unese broj n, zatim iscrtati trougao visine n",
-    usloviZadatka: 'Iskljucivo koristiti znak "#"',
+      "U nizu od n elemenata ispisati brojeve koji se dupliraju, korisnik unosi broj n, zatim n brojeva nakon čega se ispisuju brojevi koji se ponavljaju više od jednog puta",
+    usloviZadatka: "Vremenska složenost mora biti manja od O(n)",
     slika: "",
-    podudarnost: "identicna",
+    podudarnost: "ispravna",
     vidljivost: "vidljiv",
     vremenskoOgranicenje: "2000", //ms
     istekZadatka: "2019-06-11T00:00",
     testPrimjeri: [
       {
-        ulaz: "3",
-        izlaz: `  #
- # #
-#####`,
+        ulaz: "5 22 9 123 9 4",
+        izlaz: `9`,
       },
       {
-        ulaz: "4",
-        izlaz: `   #
-  # #
- #   #
-#######`,
+        ulaz: "7 1 0 2 4 5 0 1 1",
+        izlaz: `0 1`,
       },
       {
-        ulaz: "1",
-        izlaz: `#`,
+        ulaz: "10 10 20 30 40 -50 -10 -50 100 80 50",
+        izlaz: `-50 10`,
       },
     ],
     skriveniTestPrimjeri: [
@@ -163,20 +158,14 @@ export const Zadaci = [
         izlaz: "",
       },
       {
-        ulaz: "-1",
-        izlaz: "",
+        ulaz: "10 10 20 30 40 -50 -10 -50 100 80 50",
+        izlaz: "-50 10",
       },
       {
-        ulaz: "7",
-        izlaz: `      #
-     # #
-    #   #
-   #     #
-  #       #
- #         #
-#############`,
+        ulaz: "10 10 20 30 40 -50 -10 -50 100 80 50",
+        izlaz: `-50 10`,
       },
     ],
   },
 ];
- export const odabraniZadatak = Zadaci[0];
+export const odabraniZadatak = Zadaci[0];
