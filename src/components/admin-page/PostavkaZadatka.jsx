@@ -93,6 +93,7 @@ const PostavkaZadatka = () => {
                       <h3>Primjer inputa {i + 1}</h3>
                       <textarea
                         placeholder=""
+                        className="bg-blue-500"
                         value={primjer.ulaz}
                         onChange={(e) => {
                           let lista = odabraniZad.testPrimjeri.map((pr, j) => {

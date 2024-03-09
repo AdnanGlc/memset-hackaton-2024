@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import StudentSidebar from "./StudentSidebar";
 import TaskContext from "./TaskContext";
 import { Zadaci } from "../database/zadaci";
+import Navbar from "../Navbar";
 
 const defaultCode = `
 #include<iostream>
@@ -43,6 +44,8 @@ const StudentDashboard = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="flex">
       <StudentSidebar
         trenutni={trenutni}
@@ -64,6 +67,7 @@ const StudentDashboard = () => {
         zadatak={zadaci[odabrani]}
       />
     </div>
+    </>
   );
 };
 

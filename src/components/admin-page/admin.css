@@ -25,7 +25,7 @@
 
 .sidebar ul::-webkit-scrollbar-track {
   border-radius: 50px;
-  background-color: #43418e;
+  background-color: #406ee3;
   margin: 10px;
 }
 
@@ -62,7 +62,7 @@
 
 .admin-zadaci::-webkit-scrollbar-thumb {
   border-radius: 50px;
-  background-color: #43418e;
+  background-color: #406ee3;
 }
 .admin-zadaci div {
   border: none;
@@ -85,7 +85,7 @@
   color: white;
   letter-spacing: 1px;
   font-weight: normal;
-  background-color: #4944d6;
+  background-color: #406ee3;
   border: none;
 }
 .primjer textarea::placeholder {
@@ -113,7 +113,7 @@
   margin-bottom: 10px;
 }
 .ispit-trajanje button {
-  background-color: #4944d6;
+  background-color: #406ee3;
   color: white;
   padding: 7px 15px;
   border-radius: 2px;
@@ -125,12 +125,11 @@
 }
 .ispit-trajanje input {
   margin-left: 10px;
-  background-color: #4944d6;
+  background-color: #406ee3;
   border: none;
   color: white;
   padding: 7px 15px;
   letter-spacing: 1px;
-  border-radius: 5px;
   width:auto;
 }
 
@@ -139,7 +138,7 @@
 }
 .delete {
   color: white;
-  background-color: #4944d6;
+  background-color: #406ee3;
 }
 .update {
   border: 1px solid #353535;

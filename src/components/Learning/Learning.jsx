@@ -21,7 +21,7 @@ const Learning = () => {
               and continue learning!
             </p>
             <button
-              className="mt-10 bg-blue-500 p-3 rounded-2xl text-center tracking-wider text-white hover:bg-sky-700"
+              className="mt-10 bg-blue-500 p-3 rounded-2xl text-center tracking-wider text-white hover:bg-sky-700 shadow-2xl"
               onClick={() => setTextvisible(false)}
             >
               Ask me something

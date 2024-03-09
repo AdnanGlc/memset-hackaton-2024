@@ -1,4 +1,5 @@
 import exampleImage from "./future-artificial-intelligence.jpg"; 
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div>
@@ -42,9 +43,11 @@ export default function Home() {
               </div>
              
             </div>
+            <Link to="/dashboard">
             <button className="w-full bg-blue-500 text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
               Sign in
             </button>
+            </Link>
           </div>
           {/* right side */}
           <div className="relative">

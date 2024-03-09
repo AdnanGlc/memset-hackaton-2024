@@ -35,15 +35,10 @@ const TaskContext = ({
   const [primjerIndeks, setPrimjerIndeks] = useState(0);
 
   return (
-    <div className="bg-slate-300 w-[90%] h-[98vh] m-[1vh] rounded-md static">
-      <nav className="w-auto h-8 bg-white m-2 rounded-md flex justify-end gap-5 pr-5">
-        <button>b1</button>
-        <button>b2</button>
-        <button>b3</button>
-        <button>b4</button>
-      </nav>
+    <div className=" w-[90%] h-[98vh] m-[1vh] rounded-md static">
+   
       <div className="flex">
-        <div className="w-[48%] m-[1%] h-[82.9vh] rounded-md">
+        <div className="w-[48%] m-[1%] h-[80.9vh] rounded-md">
           <Editor
             theme="vs-dark"
             value={kodovi[odabrani]}
@@ -57,32 +52,32 @@ const TaskContext = ({
             </div>
           )}
           <button
-            className="w-[98%] rounded-md bg-white m-[1%] text-xl h-7 hover:bg-slate-800 hover:text-slate-100"
+            className="w-[33%] float-right rounded-md bg-blue-500 p-2 m-[1%] text-xl  text-white font-bold uppercase"
             onClick={testiraj}
           >
-            Testiraj kod
+            Test Code
           </button>
         </div>
-        <div className="w-[48%] m-[1%] h-[92%] min-h-[92%] rounded-md relative">
-          <h2 className="w-[98%] mb-1">{zadatak.imeZadatka}</h2>
+        <div className="w-[48%] m-[1%] h-[92%]  bg-slate-20 min-h-[92%]  rounded-md relative">
+          <h2 className="w-[98%] mb-1 text-blue-500 font-bold uppercase">{zadatak.imeZadatka}</h2>
           <textarea
-            className="w-[98%] max-h-[25vh] p-1 min-h-[25vh]"
+            className="w-[98%] rounded-2xl shadow-2xl max-h-[25vh] p-1 min-h-[25vh]"
             value={zadatak.tekstZadatka}
           />
-          <h3 className="w-full mb-1">Uslovi zadataka</h3>
+          <h3 className="w-full mb-1  text-blue-500 font-bold uppercase">Task Conditions</h3>
           <textarea
-            className="w-[98%] max-h-[25vh] p-1 min-h-[25vh]"
+            className="w-[98%] rounded-2xl mt-3 max-h-[25vh] shadow-2xl p-1 min-h-[25vh]"
             value={zadatak.usloviZadatka}
           />
-          <h3 className="w-full mb-1">Test primjeri</h3>
+          <h3 className="w-full mb-1  text-blue-500 font-bold uppercase">Test Examples</h3>
           <FaArrowRight
-            className="float-right -translate-y-1/2 -translate-x-1/2 mr-1 cursor-pointer hover:text-blue-500"
+            className="float-right -translate-y-1/2 mt-3 -translate-x-1/2 mr-1 cursor-pointer hover:text-blue-500"
             onClick={() => {
               setPrimjerIndeks(primjerIndeks >= 2 ? 0 : primjerIndeks + 1);
             }}
           />
           <textarea
-            className="w-[98%] max-h-[25vh] p-1 min-h-[25vh]"
+            className="w-[98%] shadow-2xl max-h-[25vh] p-1 min-h-[25vh] rounded-2xl"
             value={
               "Ulaz: " +
               zadatak.testPrimjeri[primjerIndeks].ulaz +

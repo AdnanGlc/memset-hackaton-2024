@@ -13,7 +13,7 @@ const ZadaciSidebar = () => {
     }
   }, []);
   return (
-    <div className="sidebar  md:w-[15%] h-full md:h-[85vh] m-5 rounded-md border-1 pt-3 pb-11 flex flex-wrap justify-center">
+    <div className=" bg-blue-500 md:w-[15%] h-full md:h-[85vh] m-5 rounded-md border-1 pt-3 pb-11 flex flex-wrap justify-center">
       <div className="zadaci">
         <p>Tasks:</p>
         <MdAddCircle
@@ -51,7 +51,7 @@ const ZadaciSidebar = () => {
             <li
               className={
                 zadatak.zadatakID === odabraniZad.zadatakID
-                  ? "mt-3 flex bg-[#4944d6] text-white p-2 rounded-md hover:opacity-70 relative border-2 border-white"
+                  ? "mt-3 flex bg-blue-500 text-white p-2 rounded-md hover:opacity-70 relative border-2 border-white"
                   : "mt-3 flex bg-white p-2 rounded-md hover:opacity-70 relative"
               }
               onClick={() => {
