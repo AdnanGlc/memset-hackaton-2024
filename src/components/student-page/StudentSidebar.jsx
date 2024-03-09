@@ -14,7 +14,7 @@ const StudentSidebar = ({ zadaci, odabrani, setOdabrani, ispravniZadaci }) => {
               } pl-2 bg-white m-1 rounded-md relative h-auto cursor-pointer`}
               onClick={() => setOdabrani(i)}
             >
-              <p>{zadatak.imeZadatka ?? "neispravno"}</p>
+              <p key={zadaci.id}>{zadatak.imeZadatka ?? "neispravno"}</p>
               {ispravniZadaci[i] === true ? (
                 <FaRegCircleCheck className="absolute top-1/2 -translate-y-1/2 right-1" />
               ) : null}

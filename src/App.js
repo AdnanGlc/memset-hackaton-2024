@@ -3,11 +3,10 @@ import AdminDashboard from "./components/admin-page/AdminDashboard";
 import StudentDashboard from "./components/student-page/StudentDashboard";
 function App() {
   return (
-    // <Routes>
-    //   <Route link="admin-page " Component={<AdminDashboard />} />
-    //   <Route link="/" Component={<AdminDashboard />} />
-    // </Routes>
-    <StudentDashboard />
+    <Routes>
+      <Route path="admin-page " element={<AdminDashboard />} />
+      <Route path="/tasks" element={<StudentDashboard />} />
+    </Routes>
   );
 }
 
