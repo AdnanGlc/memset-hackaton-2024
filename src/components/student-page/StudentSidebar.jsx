@@ -9,9 +9,11 @@ const StudentSidebar = ({
   rjesenja,
 }) => {
   return (
-    <div className="w-40 h-[98vh] m-[1vh]  rounded-md">
+    <div className="w-40 h-[98vh] m-[1vh]  rounded-md shadow-inner">
       <ul className="pt-8 grid items-center">
-      <p className="pl-2 mb-2 text-xl text-blue-500 font-bold uppercase">Tasks</p>
+        <p className="pl-2 mb-2 text-xl text-blue-500 font-bold uppercase">
+          Tasks
+        </p>
 
         {zadaci.map((zadatak, i) => {
           return (
@@ -28,7 +30,7 @@ const StudentSidebar = ({
               {ispravniZadaci[i] === true ? (
                 <FaRegCircleCheck
                   className={`absolute top-1/2 -translate-y-1/2 right-1 ${
-                    rjesenja[i].set === true && rjesenja[i].isp === true
+                    rjesenja[i] === true
                       ? "text-green-700 bg-white rounded-full"
                       : "text-black"
                   }`}
