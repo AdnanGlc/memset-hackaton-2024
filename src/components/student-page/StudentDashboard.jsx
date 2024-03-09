@@ -49,7 +49,7 @@ const StudentDashboard = () => {
     setKodovi(tempKodovi);
   };
   //****API************** */
-  const api1 = "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";
+  const api1 = "";
   const openai = new OpenAI({
     apiKey: api1,
     dangerouslyAllowBrowser: true, // This is the default and can be omitted
@@ -77,18 +77,6 @@ const StudentDashboard = () => {
       setRjesenja(tempRjesenja);
       setFeedbackMessage(chatCompletion.choices[0].message.content);
     }
-  }
-  async function getMessage(pitanje) {
-    const chatCompletion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: "user",
-          content: `Odgovori na slijedece pitanje: {pitanje}, ako pitanje nije vezano za IT struku odgovori sa "Moje treniranje se veže samo za IT struku, nisam u mogućnosti da vam odgovorim na pitanje"`,
-        },
-      ],
-      model: "gpt-4",
-    });
-    return chatCompletion.choices[0].message.content;
   }
   //********************* */
   return (
