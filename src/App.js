@@ -10,8 +10,11 @@ function App() {
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
       <Route path="/" element={<Login />} />
       <Route path="/tasks" element={  <StudentDashboard />} />
+      <Route path="/exam" element={  <StudentDashboard />} />
+
       <Route path="/dashboard" element={  <Dashboard/>} />
       <Route path="/learning" element={  <Learning />} />
+
     </Routes>
 
   );

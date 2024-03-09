@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { FaBrain, FaBookOpen, FaTasks } from "react-icons/fa";
 import Navbar from "../Navbar";
 import { Link } from "react-router-dom";
+
+
 const Dashboard = () => {
   const [buttonsVisible, setButtonsVisible] = useState([false, false, false]);
-
+    
   useEffect(() => {
     const timers = [
       setTimeout(() => {
