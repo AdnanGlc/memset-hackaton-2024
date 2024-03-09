@@ -29,7 +29,7 @@ const TaskContext = ({
             onChange={(value) => saveCodeChange(value)}
           />
           {feedbackMessage && (
-            <div className="bg-slate-600 w-auto h-12 rounded-md p-2 absolute top-[40%] left-[40%] -translate-x-1/2 -translate-y-1/2">
+            <div className="bg-sky-600 text-slate-100 w-auto h-12 rounded-md p-2 absolute top-[60%] left-[33.33%] -translate-x-1/2 -translate-y-1/2">
               {feedbackMessage}
             </div>
           )}

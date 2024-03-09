@@ -132,7 +132,7 @@ export const Zadaci = [
     imeZadatka: "Duplikati",
     tekstZadatka:
       "U nizu od n elemenata ispisati brojeve koji se dupliraju, korisnik unosi broj n, zatim n brojeva nakon čega se ispisuju brojevi koji se ponavljaju više od jednog puta",
-    usloviZadatka: "Vremenska složenost mora biti manja od O(n)",
+    usloviZadatka: "Vremenska složenost mora biti manja od O(n*n)",
     slika: "",
     podudarnost: "ispravna",
     vidljivost: "vidljiv",

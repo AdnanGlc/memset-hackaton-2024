@@ -49,14 +49,12 @@ const StudentDashboard = () => {
     setKodovi(tempKodovi);
   };
   //****API************** */
-  const api1 = "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";
-  const api2 = "";
+  const api1 = "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";
   const openai = new OpenAI({
     apiKey: api1,
     dangerouslyAllowBrowser: true, // This is the default and can be omitted
   });
   async function testCode() {
-    var poruka = `tekst zadataka:${zadaci[odabrani].tekstZadatka},Uslovi zadataka:${zadaci[odabrani].usloviZadatka},kod:${kodovi[odabrani]} Odgovori samo sa "DA" ili "NE" da li kod ispunjava uslove zadatka i da li daje ispravan ispis`;
     setLoaderActive(true);
     const chatCompletion = await openai.chat.completions.create({
       messages: [
@@ -69,7 +67,6 @@ const StudentDashboard = () => {
     });
     setLoaderActive(false);
     console.log(chatCompletion);
-    console.log(poruka);
     if (chatCompletion.choices[0].message.content === "DA") {
       let tempRjesenja = rjesenja;
       tempRjesenja[odabrani] = true;
@@ -80,6 +77,18 @@ const StudentDashboard = () => {
       setRjesenja(tempRjesenja);
       setFeedbackMessage(chatCompletion.choices[0].message.content);
     }
+  }
+  async function getMessage(pitanje) {
+    const chatCompletion = await openai.chat.completions.create({
+      messages: [
+        {
+          role: "user",
+          content: `Odgovori na slijedece pitanje: {pitanje}, ako pitanje nije vezano za IT struku odgovori sa "Moje treniranje se veže samo za IT struku, nisam u mogućnosti da vam odgovorim na pitanje"`,
+        },
+      ],
+      model: "gpt-4",
+    });
+    return chatCompletion.choices[0].message.content;
   }
   //********************* */
   return (
