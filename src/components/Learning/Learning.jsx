@@ -5,16 +5,18 @@ import { IoSend } from "react-icons/io5";
 import { FaThumbsUp } from "react-icons/fa6";
 import { FaThumbsDown } from "react-icons/fa6";
 import { FaRegCircleCheck } from "react-icons/fa6";
+import { FaCircleArrowRight } from "react-icons/fa6";
+
 
 const linkovi = [
-  { url: "https://www.geeksforgeeks.org/", name: "Geeks for Geeks" },
+  { url: "https://www.geeksforgeeks.org/", name: "GEEKS FOR GEEKS" },
   {
     url: "https://clementmihailescu.github.io/Pathfinding-Visualizer/",
-    name: "Pathfinding visualizer",
+    name: "PATHFIND VISUALIZER",
   },
-  { url: "https://algorithm-visualizer.org/", name: "Algorithm Visualizer" },
-  { url: "https://www.youtube.com/@TheCodingTrain", name: "The Codinng Train" },
-  { url: "https://www.youtube.com/@abdul_bari", name: "Abdul Bari" },
+  { url: "https://algorithm-visualizer.org/", name: "ALGORITHM VISUALIZER" },
+  { url: "https://www.youtube.com/@TheCodingTrain", name: "THE CODING TRAIN" },
+  { url: "https://www.youtube.com/@abdul_bari", name:"ABDUL BARI" },
 ];
 
 const Learning = () => {
@@ -37,44 +39,43 @@ const Learning = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center w-[100%] m-0 ml-auto mr-auto">
+      <div className="flex items-center mt-5 justify-center w-full">
         <img
           src={Image}
           alt="aibot"
-          className="absolute size-96 left-2 top-2"
+          className="size-102 flex-none"
         />
         {textVisible && (
-          <div className="ml-48">
-            <p className="w-[90%] text-xl tracking-wider text-justify shadow-lg rounded-md p-2">
-              Hej IB220016, naš sistem umjetne intaligencije je primjetio da
-              imaš poteškoća sa: Algoritmima i optimizacijom
-              <br /> Zbog toga smo Vam preporučili slijedeći prilagođen sadržaj,
-              sretno učenje
+          <div className="">
+            <p className="w-[90%] flex-start mt-10 bg-blue-400 text-white text-xl tracking-wider  shadow-lg rounded-md p-3 font-medium">
+              Hey Adnan, our artificial intelligence system has noticed that you're having difficulty with: Algorithms and Optimization. Therefore, we've recommended the following customized content for you. Good luck with your learning!
             </p>
-            <div className="m-5 grid gap-y-5 text-xl transition-all delay-500 justify-items-center">
+            <div className="mt-5 grid gap-y-5 text-xl transition-all delay-500 ">
               {linkovi.map((link, i) => (
+                
                 <a
                   target="blank"
                   key={i}
                   href={link.url}
-                  className={`hover:text-blue-400 shadow-md w-64 text-center
-                   delay-500 bg-slate-100 hover:shadow-inner rounded-md ${
+                  className={`hover:text-blue-400 p-2 text-left
+                   delay-500 ${
                      linksVisible[i] ? "visible" : "invisible"
                    }`}
                   style={{
                     transitionDelay: `${i * 100}ms`,
                   }}
                 >
-                  {link.name}
+                  <FaCircleArrowRight className="inline mr-5" />{link.url}
                 </a>
+                
               ))}
               <button
                 className={`${
                   buttonVisible ? "visible" : "invisible"
-                }  delay-[1500ms] mt-10 bg-blue-500 p-3 rounded-2xl text-center tracking-wider text-white hover:bg-sky-700`}
+                }   delay-[1500ms] mt-10 bg-blue-500 p-3 w-[40%] ml-auto mr-[60%] rounded-2xl text-center tracking-wider text-white hover:bg-sky-700 font-bold`}
                 onClick={() => setTextVisible(false)}
               >
-                Learn even more from me!
+                Learn more from me!
               </button>
             </div>
           </div>
@@ -89,44 +90,55 @@ const Learning = () => {
           </div>
         )}
       </div>
-      <div className="bg-slate-100 h-[250px]">
-        <h1 className="m-10 text-bold">Back To Tasks !!!</h1>
-        <p className="ml-5">
-          If you have learnd from preavious links you should be able to solve
-          these tasks now...{" "}
-        </p>
-        <ul className="flex m-10">
+      <div className="h-auto flex flex-col justify-center items-center">
+       <h1 className="ml-10 mt-20 mb-10 text-2xl uppercase font-medium">Practice some projects to implement gained knowledge</h1>
+        <ul className="flex justify-center flex-col items-center">
           <li
-            className={` pl-2 bg-white m-1 rounded-md relative h-auto cursor-pointer w-32`}
+            className={` p-6 bg-white m-1 rounded-2xl relative h-auto cursor-pointer mb-5 w-[90%] shadow-2xl`}
           >
-            <p> Duplikati </p>
-            <FaRegCircleCheck
-              className={`absolute top-1/2 -translate-y-1/2 right-1 text-slate-800 shadow-xl`}
-            />
+            <p className="uppercase font-bold text-blue-400 mb-1"> Duplikati </p>
+            <div className="flex items-center">
+            <p>U nizu od n elemenata ispisati brojeve koji se dupliraju, korisnik unosi broj n, zatim n brojeva nakon čega se ispisuju brojevi koji se ponavljaju više od jednog puta",
+    usloviZadatka: "Vremenska složenost mora biti manja od O(n)</p>
+    <button className="bg-blue-400 px-10 py-2 rounded-lg text-white">Code</button>
+    </div>
+            
           </li>
           <li
-            className={` pl-2 bg-white m-1 rounded-md relative h-auto cursor-pointer w-32`}
+            className={` p-6 bg-white m-1 rounded-2xl  relative h-auto cursor-pointer mb-5 w-[90%] shadow-2xl`}
           >
-            <p> Otoci </p>
-            <FaRegCircleCheck
-              className={`absolute top-1/2 -translate-y-1/2 right-1 text-slate-800 shadow-xl`}
-            />
+            <p className="uppercase font-bold text-blue-400 mb-1"> Duplikati </p>
+            <div className="flex items-center">
+            <p>U nizu od n elemenata ispisati brojeve koji se dupliraju, korisnik unosi broj n, zatim n brojeva nakon čega se ispisuju brojevi koji se ponavljaju više od jednog puta",
+    usloviZadatka: "Vremenska složenost mora biti manja od O(n)</p>
+    <button className="bg-blue-400 px-10 py-2 rounded-lg text-white">Code</button>
+    </div>
+            
           </li>
           <li
-            className={` pl-2 bg-white m-1 rounded-md relative h-auto cursor-pointer w-32`}
+            className={` p-6 bg-white m-1 rounded-2xl relative h-auto cursor-pointer mb-5 w-[90%] shadow-2xl`}
           >
-            <p> Labirint </p>
-            <FaRegCircleCheck
-              className={`absolute top-1/2 -translate-y-1/2 right-1 text-slate-800 shadow-xl`}
-            />
+            <p className="uppercase font-bold text-blue-400 mb-1"> Duplikati </p>
+            <div className="flex items-center">
+            <p>U nizu od n elemenata ispisati brojeve koji se dupliraju, korisnik unosi broj n, zatim n brojeva nakon čega se ispisuju brojevi koji se ponavljaju više od jednog puta",
+    usloviZadatka: "Vremenska složenost mora biti manja od O(n)</p>
+    <button className="bg-blue-400 px-10 py-2 rounded-lg text-white">Code</button>
+    </div>
+            
           </li>
         </ul>
+        <div className="mt-5 text-center">
+        <h2>Was this suggestion helpful?</h2>
+        <div className="flex justify-evenly my-5">
+        <button className="shadow-2xl bg-blue-400 px-3 py-1 rounded-xl text-white">Yes</button>
+        <button  className="shadow-2xl bg-blue-400 px-3 py-1 rounded-xl text-white">No</button>
+
+        </div>
+        
+
       </div>
-      <div className="w-full flex gap-4 justify-end">
-        <h2>Did you like the content</h2>
-        <FaThumbsDown className="cursor-pointer text-blue-700 hover:text-blue-950 size-8" />
-        <FaThumbsUp className="cursor-pointer text-blue-700 hover:text-blue-400 size-8 mr-2" />
       </div>
+
     </>
   );
 };
