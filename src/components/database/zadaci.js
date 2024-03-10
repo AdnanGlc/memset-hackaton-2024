@@ -1,9 +1,9 @@
 export const Zadaci = [
   {
     zadatakID: "1",
-    imeZadatka: "Paran ili Neparan",
+    imeZadatka: "Paran ili neparan",
     tekstZadatka:
-      "Napisi program koji ispituje da li je broj paran ili neparan",
+      "Napiši program koji ispituje da li je broj paran ili neparan",
     usloviZadatka: "Zabranjeno koristiti % za testiranje parnosti",
     slika: "",
     podudarnost: "ispravna",
@@ -23,8 +23,8 @@ export const Zadaci = [
   },
   {
     zadatakID: "6",
-    imeZadatka: "Hello world",
-    tekstZadatka: "Napisi program koji ispisuje poruku Hello World!",
+    imeZadatka: "Hello World",
+    tekstZadatka: "Napiši program koji ispisuje poruku Hello World!",
     usloviZadatka: "U kodu mora biti komentar FIT-Mostar",
     slika: "",
     podudarnost: "ispravna",
@@ -44,9 +44,9 @@ export const Zadaci = [
   },
   {
     zadatakID: "2",
-    imeZadatka: "Najveci broj",
+    imeZadatka: "Najveći broj",
     tekstZadatka:
-      "Napisi program koji trazi od korisnika unos 3 broja i ispisuje najveci broj",
+      "Napiši program koji traži od korisnika unos 3 broja i ispisuje najveći broj",
     usloviZadatka: "Zabranjeno koristiti funkciju max()",
     slika: "",
     podudarnost: "ispravna",
@@ -66,11 +66,11 @@ export const Zadaci = [
   },
   {
     zadatakID: "3",
-    imeZadatka: "Fibbonaci",
+    imeZadatka: "Fibonacci",
     tekstZadatka:
-      "Napisi program koji trazi od korisnika unos broja n, zatim ispisuje n-ti fibbunacijev broj",
+      "Napiši program koji traži od korisnika unos broja n, zatim ispisuje n-ti Fibonaccijev broj",
     usloviZadatka:
-      "Mora se koristiti rekurzija\nUkoliko se desio owerflow nad intom vratiti '0'",
+      "Mora se koristiti rekurzija\nUkoliko se desio overflow nad intom vratiti '0'",
     slika: "",
     podudarnost: "ispravna",
     vidljivost: "nevidljiv",
@@ -90,7 +90,7 @@ export const Zadaci = [
   {
     zadatakID: "4",
     imeZadatka: "Procenat prostih",
-    tekstZadatka: `Traziti od korisnika da u niz spremi 100 nasumicnih brojeva od 1-100000 koji imaju nepran broj cifara, te ispisati koliko je procenat generisanja prostih brojeva`,
+    tekstZadatka: `Tražiti od korisnika da u niz spremi 100 nasumičnih brojeva od 1-100000 koji imaju nepran broj cifara, te ispisati koliko je procenat generisanja prostih brojeva`,
     usloviZadatka:
       "Mora postojati logika koja omogućuje ponavljanje generisanja brojeva sve dok nemaju neparan broj cifara",
     slika: "",
@@ -169,3 +169,43 @@ export const Zadaci = [
   },
 ];
 export const odabraniZadatak = Zadaci[0];
+/*
+
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+bool prost(int a)
+{
+	for (int i = 2; i <= a / 2; i++)
+		if (a % i == 0)return false;
+	return true;
+}
+int bc(int a)
+{
+	int z = 0;
+	while (a) { a /= 10; z++; };
+	return z;
+}
+int main()
+{
+	srand(time(NULL));
+	int niz[100];
+	for (int i = 0; i < 100; i++)
+	{
+		int temp;
+		do {
+			temp = rand() % 100000 + 1;
+		} while (bc(temp)%2==0);
+		niz[i] = temp;
+	}
+	int brojac = 0;
+	for (int i = 0; i < 100; i++)
+		if(prost(niz[i]))
+		brojac++;
+	cout << "Procenat prostih: " <<  (float)(brojac/100.0) <<"%"<< endl;
+	return 0;
+}
+
+
+*/

@@ -8,6 +8,7 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import OpenAI from "openai";
+import { Link } from "react-router-dom";
 
 const linkovi = [
   { url: "https://www.geeksforgeeks.org/", name: "GEEKS FOR GEEKS" },
@@ -21,7 +22,7 @@ const linkovi = [
 ];
 
 const Learning = () => {
-  const api1 = "";
+  const api1 = "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";
   const openai = new OpenAI({
     apiKey: api1,
     dangerouslyAllowBrowser: true,
@@ -32,10 +33,10 @@ const Learning = () => {
       messages: [
         {
           role: "user",
-          content: `Odgovori vezano za programiranje i ucenje programiranja: ${poruka}`,
+          content: `${poruka}, ako pitanje nije vezano za programiranje ili IT odgovori "Nisam treniran da odgovorim na vaše pitanje, postavite mi pitanje vezano za programiranje ili IT, odgovori kratko daj mi linkove ili knjige"`,
         },
       ],
-      model: "gpt-4",
+      model: "gpt-4-turbo-preview",
     });
     return chatCompletion.choices[0].message.content;
   }
@@ -104,13 +105,13 @@ const Learning = () => {
           </div>
         )}
         {!textVisible && (
-          <div className="w-96 h-96 ml-10 bg-blue-500 rounded-2xl relative opacity-80 delay-500">
-            <p>{odgovor}</p>
+          <div className="w-[550px] h-96 ml-10 bg-blue-500 rounded-2xl relative opacity-80 delay-500">
+            <p className="overflow-y-auto max-h-80 p-2">{odgovor}</p>
             <input
               placeholder="Ask me something"
               className="w-full absolute bottom-0 pl-2 pt-2 pb-2 border-2 border-blue-500"
-              onChange={(value) => {
-                setPoruka(value);
+              onChange={(event) => {
+                setPoruka(event.target.value);
                 console.log(poruka);
               }}
             />
@@ -145,7 +146,9 @@ const Learning = () => {
                 "Vremenska složenost mora biti manja od O(n)
               </p>
               <button className="bg-blue-500 px-10 py-2 rounded-lg text-white">
-                Code
+                <Link className="w-full h-full" to="/tasks">
+                  Code
+                </Link>
               </button>
             </div>
           </li>
@@ -164,7 +167,9 @@ const Learning = () => {
                 "Vremenska složenost mora biti manja od O(n)
               </p>
               <button className="bg-blue-400 px-10 py-2 rounded-lg text-white">
-                Code
+                <Link className="w-full h-full" to="/tasks">
+                  Code
+                </Link>
               </button>
             </div>
           </li>
@@ -182,8 +187,10 @@ const Learning = () => {
                 brojevi koji se ponavljaju više od jednog puta", usloviZadatka:
                 "Vremenska složenost mora biti manja od O(n)
               </p>
-              <button className="bg-blue-400 px-10 py-2 rounded-lg text-white">
-                Code
+              <button className="bg-blue-400 px-10 py-2 rounded-lg text-white m-0 p-0">
+                <Link className="w-full h-full" to="/tasks">
+                  Code
+                </Link>
               </button>
             </div>
           </li>
