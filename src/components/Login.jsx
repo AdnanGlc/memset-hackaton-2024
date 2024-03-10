@@ -1,6 +1,10 @@
 import exampleImage from "./future-artificial-intelligence.jpg"; 
 import { Link } from "react-router-dom";
+import Confetti from 'react-confetti'
+
 export default function Home() {
+
+
   return (
     <div>
     <>
@@ -9,6 +13,7 @@ export default function Home() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Memset - Login</title>
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      
         <div className="relative flex flex-col m-6 space-y-8 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0">
           {/* left side */}
           <div className="flex flex-col justify-center p-8 md:p-14">

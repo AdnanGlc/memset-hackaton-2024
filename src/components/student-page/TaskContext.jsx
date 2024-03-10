@@ -3,6 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Editor } from "@monaco-editor/react";
 import Loader from "./loader/Loader";
 import OpenAI from "openai";
+import Confetti from "react-confetti";
 
 const TaskContext = ({
   saveCodeChange,
@@ -14,6 +15,7 @@ const TaskContext = ({
   testCode,
   loaderActive,
   feedbackMessage,
+  confetti
 }) => {
   //********************** */
   const [primjerIndeks, setPrimjerIndeks] = useState(0);
@@ -21,7 +23,9 @@ const TaskContext = ({
   return (
     <div className=" w-[90%] h-[98vh] m-[1vh] rounded-md static">
       <div className="flex">
-        <div className="w-[48%] m-[1%] h-[80.9vh] rounded-md">
+
+        <div className="w-[48%] m-[1%] h-[80.9vh] rounded-md relative">
+          {confetti && <Confetti  width={600} height={600}/>}
           <Editor
             theme="vs-dark"
             value={kodovi[odabrani]}
@@ -29,7 +33,7 @@ const TaskContext = ({
             onChange={(value) => saveCodeChange(value)}
           />
           {feedbackMessage && (
-            <div className="bg-sky-600 text-slate-100 w-auto h-12 rounded-md p-2 absolute top-[60%] left-[33.33%] -translate-x-1/2 -translate-y-1/2">
+                        <div className="bg-sky-600 text-slate-100 w-auto h-12 rounded-md p-2 absolute bottom-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2">
               {feedbackMessage}
             </div>
           )}

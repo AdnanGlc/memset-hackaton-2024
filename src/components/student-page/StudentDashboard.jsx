@@ -35,6 +35,7 @@ const StudentDashboard = () => {
   const [kodovi, setKodovi] = useState(
     new Array(zadaci.length).fill(defaultCode)
   );
+  const [confetti, setConfetti] = useState(false);
   const [rjesenja, setRjesenja] = useState(
     new Array(zadaci.length).fill(false)
   );
@@ -55,6 +56,8 @@ const StudentDashboard = () => {
     dangerouslyAllowBrowser: true, // This is the default and can be omitted
   });
   async function testCode() {
+    setFeedbackMessage("ma kraljuuu uradio si top");
+  
     setLoaderActive(true);
     const chatCompletion = await openai.chat.completions.create({
       messages: [
@@ -68,6 +71,8 @@ const StudentDashboard = () => {
     setLoaderActive(false);
     console.log(chatCompletion);
     if (chatCompletion.choices[0].message.content === "DA") {
+      setConfetti(true);
+      setTimeout(()=>setConfetti(false),5000)
       let tempRjesenja = rjesenja;
       tempRjesenja[odabrani] = true;
       setRjesenja(tempRjesenja);
@@ -103,6 +108,7 @@ const StudentDashboard = () => {
           zadatak={zadaci[odabrani]}
           rjesenja={rjesenja}
           feedbackMessage={feedbackMessage}
+          confetti={confetti}
         />
       </div>
     </>
