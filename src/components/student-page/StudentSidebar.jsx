@@ -21,7 +21,7 @@ const StudentSidebar = ({
               key={zadaci.id}
               className={` ${
                 odabrani === i ? "bg-blue-400 text-white p-3 " : "border-none"
-              } pl-2 m-1 rounded-md p-3 relative  h-auto cursor-pointer`}
+              } pl-2 m-1 rounded-md p-3 relative  h-auto cursor-pointer shadow-md`}
               onClick={() => setOdabrani(i)}
             >
               <p key={zadaci.id} className="text-sm">
@@ -29,10 +29,10 @@ const StudentSidebar = ({
               </p>
               {ispravniZadaci[i] === true ? (
                 <FaRegCircleCheck
-                  className={`absolute top-1/2 -translate-y-1/2 right-1 ${
+                  className={`absolute top-1/2 -translate-y-1/2 right-1 rounded-full text-slate-600 ${
                     rjesenja[i] === true
-                      ? "text-green-700 bg-white rounded-full"
-                      : "text-black"
+                      ? "bg-green-500  rounded-full"
+                      : "bg-slate-400"
                   }`}
                 />
               ) : null}

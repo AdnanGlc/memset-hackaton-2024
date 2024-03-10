@@ -15,7 +15,7 @@ const TaskContext = ({
   testCode,
   loaderActive,
   feedbackMessage,
-  confetti
+  confetti,
 }) => {
   //********************** */
   const [primjerIndeks, setPrimjerIndeks] = useState(0);
@@ -23,9 +23,8 @@ const TaskContext = ({
   return (
     <div className=" w-[90%] h-[98vh] m-[1vh] rounded-md static">
       <div className="flex">
-
         <div className="w-[48%] m-[1%] h-[80.9vh] rounded-md relative">
-          {confetti && <Confetti  width={600} height={600}/>}
+          {confetti && <Confetti width={600} height={600} />}
           <Editor
             theme="vs-dark"
             value={kodovi[odabrani]}
@@ -33,12 +32,12 @@ const TaskContext = ({
             onChange={(value) => saveCodeChange(value)}
           />
           {feedbackMessage && (
-                        <div className="bg-sky-600 text-slate-100 w-auto h-12 rounded-md p-2 absolute bottom-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2">
+            <div className="bg-sky-600 text-slate-100 w-auto h-12 rounded-md p-2 absolute bottom-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2">
               {feedbackMessage}
             </div>
           )}
           {loaderActive && (
-            <div className="absolute top-[632px] left-[470px] size-20 grid justify-center">
+            <div className="absolute top-[550px] left-[280px] size-20 grid justify-center">
               <Loader className="size-36 bg-slate-700 absolute top-1/2 left-1/2" />
               .
             </div>

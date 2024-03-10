@@ -50,14 +50,12 @@ const StudentDashboard = () => {
     setKodovi(tempKodovi);
   };
   //****API************** */
-  const api1 = "";
+  const api1 = "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";
   const openai = new OpenAI({
     apiKey: api1,
     dangerouslyAllowBrowser: true, // This is the default and can be omitted
   });
   async function testCode() {
-    setFeedbackMessage("ma kraljuuu uradio si top");
-  
     setLoaderActive(true);
     const chatCompletion = await openai.chat.completions.create({
       messages: [
@@ -72,7 +70,8 @@ const StudentDashboard = () => {
     console.log(chatCompletion);
     if (chatCompletion.choices[0].message.content === "DA") {
       setConfetti(true);
-      setTimeout(()=>setConfetti(false),5000)
+      setTimeout(() => setConfetti(false), 5000);
+      setFeedbackMessage("Task done sucessfully!  ");
       let tempRjesenja = rjesenja;
       tempRjesenja[odabrani] = true;
       setRjesenja(tempRjesenja);
