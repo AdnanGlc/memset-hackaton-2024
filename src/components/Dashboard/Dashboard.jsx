@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [buttonsVisible, setButtonsVisible] = useState([false, false, false]);
-    
   useEffect(() => {
     const timers = [
       setTimeout(() => {
